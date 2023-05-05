@@ -7,9 +7,9 @@
 
 .container {
     display: grid;
-    grid-template: 200px 1fr 10% / 20% auto auto;
+    grid-template: 150px auto 10% / 60% 20% 20%;
     grid-template-areas: "header     header      header"
-        "panel-izq  contenido   contenido"
+        "contenido  contenido   contenido"
         "footer     footer      footer";
     gap: 5px;
 
@@ -57,12 +57,10 @@
     list-style: none;
 }
 
-/*------BARRA DE NAVEGACION-------*/
+/*------BARRA DE NAVEGACION----------*/
 .container .header .container-nav {
     width: 100%;
     background-color: rgb(233, 236, 18, 0.5);
-    position: sticky !important;
-    top: 0;
 }
 
 .nav-link {
@@ -83,17 +81,12 @@
 }
 
 /*--------------------------------------CONTENIDO-------*/
-/*------PANEL IZQUIERDO-------*/
-.container-nav-panel {
-    grid-area: panel-izq;
-
-}
-
-.panel-izq {
-    padding: 5px 0;
-}
 
 /*------PRODUCTOS-------*/
+.contenido{
+    grid-area: contenido;
+    
+}
 .contenido .titulo-contenido {
     display: flex;
     flex-direction: column;
@@ -109,13 +102,21 @@
     color: blue;
     padding-bottom: 5px;
 }
-
+.contenido .container-contenido{
+    max-width: 1200px;
+   
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+    /* oculto lo que queda fuera del .contenedor */
+    contain: paint;
+}
 .contenido .container-contenido .container-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 10px;
     grid-row-gap: 10px;
-    /*width: 60%; */
+    /* width: 60%; */
     width: 100%;
 }
 
@@ -163,7 +164,123 @@
 }
 
 /*-----CARRITO DE COMPRA-----*/
+.container-carrito{
+    border: 1px solid #666;
+    width: 35%;
+    margin-top: 30px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: auto;
+    position: sticky !important;
+    top: 0;
+    transition: .3s;
+    /* Estilos para ocultar el carro de compa */
+    margin-right: -100%;
+    opacity: 0;
+}
+.container-carrito .header-carrito{
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 30px 0;
+}
+.container-carrito .carrito-item{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-between; */
+    position: relative;
+    border-bottom: 1px solid #666;
+    padding: 20px;
+}
+.container-carrito .carrito-item img{
+    margin-right: 20px;
+}
+.container-carrito .carrito-item .carrito-item-titulo{
+    display: block;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+.container-carrito .carrito-item .selector-cantidad{
+    display: inline-block;
+    margin-right: 25px;
+}
+.container-carrito .carrito-item .carrito-item-cantidad{
+    border: none;
+    font-size: 18px;
+    background-color: transparent;
+    display: inline-block;
+    width:30px;
+    padding: 5px;
+    text-align: center;
+}
+.container-carrito .carrito-item .selector-cantidad i{
+    font-size: 18px;
+    width: 32px;
+    height: 32px;
+    line-height: 32px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+}
+.container-carrito .carrito-item .carrito-item-precio{
+    font-weight: bold;
+    display: inline-block;
+    font-size: 18px;
+    margin-bottom: 5px;
+}
+.container-carrito .carrito-item .btn-eliminar{
+    position: absolute;
+    right: 15px;
+    top: 15px;
+    color: #000;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    line-height: 40px;
+    text-align: center;
+    border-radius: 50%;
+    border: 1px solid #000;
+    cursor: pointer;
+    display: block;
+    background: transparent;
+    z-index: 20;
+}
+.container-carrito .carrito-item .btn-eliminar i{
+    pointer-events: none;
+}
 
+.carrito-total{
+    background-color: #f3f3f3;
+    padding: 30px;
+}
+.carrito-total .fila{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    font-size: 22px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+.carrito-total .btn-pagar{
+    display: block;
+    width: 100%;
+    border: none;
+    background: #000;
+    color: #fff;
+    border-radius: 5px;
+    font-size: 18px;
+    padding: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+    transition: .3s;
+}
+.carrito-total .btn-pagar:hover{
+    scale: 1.05;
+}
 /*-----PIE DE PAGINA-----*/
 .footer {
     grid-area: footer;
