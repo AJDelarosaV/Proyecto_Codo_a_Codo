@@ -1,0 +1,22 @@
+.center-contenido{
+    margin: 0 auto;
+}
+.contenido .container-form{
+    display: flex;
+    flex-direction: column;
+    max-width: 1000px;
+}
+
+.contenido .container-form #box_formulario{
+    display: block;
+}
+
+.contenido .container-form #box_formulario .wd-input{
+    width: 100%;
+}
+.contenido .container-form .contenedor-btn{
+    margin: 0 auto;
+}
+.contenido .container-form .contenedor-btn #wd-btn{
+    width: 100%;
+}

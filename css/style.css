@@ -20,7 +20,20 @@
     grid-area: header;
 
 }
-
+.item-buscador{
+    width: 300px;
+}
+.item-buscador .text-search{
+    padding: 5px;
+    width: 100%;
+    border-radius: 10px;
+    
+}
+.item-buscador .text-search:hover{
+    box-shadow: 0 0 10px #666;
+    scale: 1.05;
+    transition: .3s;
+}
 .container-header {
     display: flex;
     justify-content: space-around;
