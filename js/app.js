@@ -1,5 +1,18 @@
 //Creamos una variable global para mantener el estado de visibilidad del carro de compras.
 var carritoVisible = false;
+var userLog = sessionStorage.getItem('userLogin'),
+    userNam = sessionStorage.getItem('userName');
+
+
+//Cargamos y comprobamos datos del usuario si ya inicio sesion
+if (userLog !== null){
+    const txt = document.getElementsByClassName('txt-user');
+    txt.innerText = userNam;
+    
+}else{
+    alert('Vacio')
+}
+
 
 //Espermos que todos los elementos de la página cargen para ejecutar el script
 if (document.readyState == 'loading') {
@@ -7,7 +20,9 @@ if (document.readyState == 'loading') {
 } else {
     ready();
 }
+
 function ready() {
+
 
     //Agregamos funcionalidad al boton Agregar al carrito
     var botonesAgregarAlCarrito = document.getElementsByClassName('btn-agregar-producto');
@@ -36,10 +51,11 @@ function ready() {
         var button = botonesRestarCantidad[i];
         button.addEventListener('click', restarCantidad);
     }
-
+    
     //Agregamos funcionalidad al botón comprar
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked)
 }
+
 //Función para el boton click de agregar al carrito
 function agregarAlCarritoClicked(event) {
     var button = event.target;
@@ -114,16 +130,24 @@ function hacerVisibleCarrito() {
 }
 //Eliminamos todos los elementos del carrito y lo ocultamos
 function pagarClicked() {
-    alert("Gracias por la compra");
-    //Elimino todos los elmentos del carrito
-    var carritoItems = document.getElementsByClassName('carrito-items')[0];
-    while (carritoItems.hasChildNodes()) {
-        carritoItems.removeChild(carritoItems.firstChild)
-    }
-    actualizarTotalCarrito();
-    ocultarCarrito();
-}
+    if (userLog === 'true') {
+        //Elimino todos los elmentos del carrito
+        alert("Gracias por la compra");
+        var carritoItems = document.getElementsByClassName('carrito-items')[0];
+        while (carritoItems.hasChildNodes()) {
+            carritoItems.removeChild(carritoItems.firstChild)
+        }
 
+        actualizarTotalCarrito();
+        ocultarCarrito();
+
+
+
+        return;
+    } else {
+        alert("No puede pagar sin antes iniciar sesión.");
+    }
+}
 //Aumento en uno la cantidad del elemento seleccionado
 function sumarCantidad(event) {
     var buttonClicked = event.target;

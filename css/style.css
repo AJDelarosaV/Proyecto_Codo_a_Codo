@@ -39,6 +39,7 @@
 .container-header {
     display: flex;
     justify-content: space-around;
+    margin: 20px;
 }
 
 .container-buscador {
@@ -46,11 +47,7 @@
     align-content: center;
 }
 
-.container-logo {
-    width: auto;
-    margin: 10px;
 
-}
 
 .container-carrito-header {
     flex-direction: column;
@@ -67,11 +64,15 @@
     display: inline-flex;
     list-style: none;
 }
+.nav-carrito .txt-user{
+    width: 200px;
+}
 
 /*------BARRA DE NAVEGACION----------*/
 .container .header .container-nav {
     width: 100%;
     background-color: rgb(233, 236, 18, 0.5);
+    
 }
 
 .nav-link {
@@ -96,12 +97,13 @@
 /*------PRODUCTOS-------*/
 .contenido{
     grid-area: contenido;
+    margin: 25px 0;
      
 }
 .contenido h1, span{
     display: block;
     text-align: center;
-    margin: 5px 0 15px 0;
+    margin: 10px 0 15px 0;
     color: blue;
 }
 .contenido .container-contenido{
