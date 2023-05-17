@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="/js/cargadeproductos.js" async></script>
+    <script src="/js/api.js" async></script>
     <script src="/js/app.js" async></script>
     <title>Decorumbas</title>
 </head>
@@ -19,41 +21,52 @@
         <!--ENCABEZADO-->
         <header class="header">
             <div class="container-header">
-                
-                <div class="container-logo">
-                    <a href="/index.html" class="logo"><img src="/img/logo.png" alt="logo" width="100px"></a>
-                    <a href="/index.html" class="logo"><img src="/img/logo2.png" alt="logo-nombre" width="300px"></a>
+                <div class="weather-content">
+                    <div class="resultado">
+     
+                    </div>
                 </div>
+                <div class="container-logo">
+                    <a href="/index.html" class="logo logo1"><img src="/img/logo.png" alt="logo" width="100px"></a>
+                    <a href="/index.html" class="logo"><img src="/img/logo2.png" alt="logo-nombre" width="300px"></a>
+                </div>             
                 <div class="container-carrito-header centerContent centerItem">
-                    
-                    <ul class="nav-carrito">
-                        <p class="txt-user"></p>
-                        <li class="link-user-reg"><a class="nav-link userReg" href="/cuentas/registro.html"><i class='fa fa-user-plus'></i></a></li>
-                        <li>|</li>
-                        <li class="link-user-login"><a class="nav-link" href="/cuentas/login.html"><i class='fa fa-user'></i></a></li>
-                        
+
+                    <div class="container-login">
+                    <span id="txt-user"></span>  
+                    <ul class="nav-carrito" id="nav-carrito">                  
+                            <li class="link-user-reg"><a class="nav-link userReg" href="/cuentas/registro.html"><i
+                                        class='fa fa-user-plus'></i></a></li>
+                            <li>|</li>
+                            <li class="link-user-login"><a class="nav-link" href="/cuentas/login.html"><i
+                                        class='fa fa-user'></i></a></li>
                     </ul>
+                    <form action="/index.html" id="close_session" class="close_session"><button type="submit"" id="btn_close_session" class="btn_close_session">Cerrar Sesion</button></form>
+                </div> 
                 </div>
             </div>
             <nav class="container-nav centerContent">
 
                 <a class="nav-link" href="/index.html">Productos</a>
                 <a class="nav-link" href="/Sobre_Nostros.html">Sobre Nosotros</a>
-                <a class="nav-link" href="/contacto.html">Contacto</a>
+                
 
             </nav>
         </header>
         <!--CONTENIDO-->
 
         <div class="contenido">
-
+            <div class="container-logo2">
+                <img src="/img/logo2.png" alt="logo" width="60%">
+                
+            </div>
             <h1>Productos</h1>
             <span>Todo lo que necesites para tu fiesta!!!</span>
 
             <div class="container-contenido">
                 <!-- PRODUCTOS ---->
                 <div class="container-productos">
-                    <div class="producto">
+                    <!--<div class="producto">
                         <span class="titulo-producto">Acrilico 50cc</span>
                         <img src="/img//productos/productos de manualidades/acrilico_50cc.webp" alt=""
                             class="img-producto">
@@ -274,7 +287,7 @@
                         <img src="/img/productos/piñatas/PIÑATA ROBLOX.webp" alt="" class="img-producto">
                         <span class="precio-producto">$750</span>
                         <button class="btn-agregar-producto">Agregar al Carrito</button>
-                    </div>
+                    </div>-->
 
                 </div>
                 <!-- CARRO DE COMPRAS -->
@@ -329,6 +342,7 @@
                     </div>
                 </div>
             </div>
+            
 
         </div>
         <!--PIE DE PÁGINA-->
@@ -338,8 +352,9 @@
                     <h4>Navegación</h4>
                     <ul>
                         <li class="footer-mg link-footer"><a class="nav-link" href="/index.html">Productos</a></li>
-                        <li class="footer-mg link-footer"><a class="nav-link"href="/Sobre_Nostros.html">Sobre Nosotros</a></li>
-                        <li class="footer-mg link-footer"><a class="nav-link" href="/contacto.html">Contacto</a></li>
+                        <li class="footer-mg link-footer"><a class="nav-link" href="/Sobre_Nostros.html">Sobre
+                                Nosotros</a></li>
+                        
                     </ul>
                 </div>
                 <div class="container-footer-medios-de-pago footer-mg">
@@ -368,17 +383,17 @@
                 </div>
                 <div class="container-footer-contacto footer-mg">
                     <h4>Contactanos</h4>
-                    <ul  class= "link-footer">
+                    <ul class="link-footer">
                         <li class="iconos">
-                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor"
-                                class="bi bi-telephone " viewBox="0 0 16 16">
-                                <path
-                                    d="M3.654 1.328a.678.678 0 0 0-1.015-.063L1.605 2.3c-.483.484-.661 1.169-.45 1.77a17.568 17.568 0 0 0 4.168 6.608 17.569 17.569 0 0 0 6.608 4.168c.601.211 1.286.033 1.77-.45l1.034-1.034a.678.678 0 0 0-.063-1.015l-2.307-1.794a.678.678 0 0 0-.58-.122l-2.19.547a1.745 1.745 0 0 1-1.657-.459L5.482 8.062a1.745 1.745 0 0 1-.46-1.657l.548-2.19a.678.678 0 0 0-.122-.58L3.654 1.328zM1.884.511a1.745 1.745 0 0 1 2.612.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z" />
-                            </svg>
-                            <span><a href="" class="nav-link">+541137673836</a></span>
+                            <a href="https://wa.me/5491137673836" class="nav-link"><div class="btn-whatsapp"><svg baseProfile="tiny" xmlns="http://www.w3.org/2000/svg" viewBox="300 -476.1 1792 1792" ><path d="M1413 497.9c8.7 0 41.2 14.7 97.5 44s86.2 47 89.5 53c1.3 3.3 2 8.3 2 15 0 22-5.7 47.3-17 76-10.7 26-34.3 47.8-71 65.5s-70.7 26.5-102 26.5c-38 0-101.3-20.7-190-62-65.3-30-122-69.3-170-118s-97.3-110.3-148-185c-48-71.3-71.7-136-71-194v-8c2-60.7 26.7-113.3 74-158 16-14.7 33.3-22 52-22 4 0 10 .5 18 1.5s14.3 1.5 19 1.5c12.7 0 21.5 2.2 26.5 6.5s10.2 13.5 15.5 27.5c5.3 13.3 16.3 42.7 33 88s25 70.3 25 75c0 14-11.5 33.2-34.5 57.5s-34.5 39.8-34.5 46.5c0 4.7 1.7 9.7 5 15 22.7 48.7 56.7 94.3 102 137 37.3 35.3 87.7 69 151 101a44 44 0 0 0 22 7c10 0 28-16.2 54-48.5s43.3-48.5 52-48.5zm-203 530c84.7 0 165.8-16.7 243.5-50s144.5-78 200.5-134 100.7-122.8 134-200.5 50-158.8 50-243.5-16.7-165.8-50-243.5-78-144.5-134-200.5-122.8-100.7-200.5-134-158.8-50-243.5-50-165.8 16.7-243.5 50-144.5 78-200.5 134S665.3 78.7 632 156.4s-50 158.8-50 243.5a611 611 0 0 0 120 368l-79 233 242-77a615 615 0 0 0 345 104zm0-1382c102 0 199.5 20 292.5 60s173.2 93.7 240.5 161 121 147.5 161 240.5 60 190.5 60 292.5-20 199.5-60 292.5-93.7 173.2-161 240.5-147.5 121-240.5 161-190.5 60-292.5 60a742 742 0 0 1-365-94l-417 134 136-405a736 736 0 0 1-108-389c0-102 20-199.5 60-292.5s93.7-173.2 161-240.5 147.5-121 240.5-161 190.5-60 292.5-60z"></path></svg>+541137673836</div></a>
+                            
                         </li>
                         <li class="iconos">
-                            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"  width="16" height="16"><!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. --><path d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z"/>  </svg><span></span>decorumbas@gmail.com</span>
+                            <a href="mailto:decorumbas@gmail.com" class="nav-link"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="30" height="30">
+                                <!--! Font Awesome Pro 6.4.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) Copyright 2023 Fonticons, Inc. -->
+                                <path
+                                    d="M64 112c-8.8 0-16 7.2-16 16v22.1L220.5 291.7c20.7 17 50.4 17 71.1 0L464 150.1V128c0-8.8-7.2-16-16-16H64zM48 212.2V384c0 8.8 7.2 16 16 16H448c8.8 0 16-7.2 16-16V212.2L322 328.8c-38.4 31.5-93.7 31.5-132 0L48 212.2zM0 128C0 92.7 28.7 64 64 64H448c35.3 0 64 28.7 64 64V384c0 35.3-28.7 64-64 64H64c-35.3 0-64-28.7-64-64V128z" />
+                            </svg>Escribenos</a>
                         </li>
 
                     </ul>
@@ -401,9 +416,9 @@
                 </div>
                 <div class="container-footer-direccion">
                     <div class="iconos">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24"
-                            viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" class="feather feather-map-pin img-wd">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"
+                            class="feather feather-map-pin img-wd">
                             <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
                             <circle cx="12" cy="10" r="3"></circle>
                         </svg>
@@ -419,6 +434,7 @@
             <div class="copy-right">
                 <span><i class="fa fa-copyright" aria-hidden="true"></i>DecoRumbas 2023 - Codo a Codo</span>
             </div>
+            
         </footer>
     </div>
 </body>

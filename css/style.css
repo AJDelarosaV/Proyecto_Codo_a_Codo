@@ -1,3 +1,6 @@
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------FUENTE A UTILIZAR----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Montserrat:wght@200&family=Stylish&display=swap');
 
 * {
@@ -6,6 +9,9 @@
     box-sizing: border-box;
     font-family: 'Montserrat';
 }
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------GRID DE LA PAGINA----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .container {
     display: grid;
     grid-template: 150px auto 1fr / 60% 20% 20%;
@@ -17,38 +23,36 @@
     margin: 0 auto;
 }
 
-/*------Encabezado-------*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------ENCABEZADO----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .header {
     grid-area: header;
     
 }
-.item-buscador{
-    width: 300px;
-}
-.item-buscador .text-search{
-    padding: 5px;
-    width: 100%;
-    border-radius: 10px;
-    
-}
-.item-buscador .text-search:hover{
-    box-shadow: 0 0 10px #666;
-    scale: 1.05;
-    transition: .3s;
-}
+
 .container-header {
     display: flex;
     justify-content: space-around;
     margin: 20px;
 }
 
-.container-buscador {
-    width: 30%;
-    align-content: center;
+.weather-content{
+    
+    text-align: center;
+    border-radius: 9px;
+    /* display: grid;
+    grid-template-columns: repeat(3,1fr); */
+    
 }
 
-
-
+.weather-content .resultado h5, p, h2{
+    color: blue;
+    font-size: 14px;
+}
+.weather-content .resultado img{
+    width: 30px;
+}
 .container-carrito-header {
     flex-direction: column;
     width: 30%;
@@ -59,16 +63,68 @@
     justify-content: center;
     align-items: center;
 }
-
+.container-login{
+    width: auto;
+}
 .nav-carrito {
+    
     display: inline-flex;
     list-style: none;
+   
+    width: 100%;
+    justify-content: center;
+    
 }
-.nav-carrito .txt-user{
-    width: 200px;
+.nav-carrito-inactivo{
+    display: none;
 }
 
-/*------BARRA DE NAVEGACION----------*/
+#txt-user{
+    
+    width: auto;
+    color: blue;
+    height: auto;
+    text-align: center;
+    font-size: 90%;
+    font-weight: 800;
+    font-size-adjust: 0.2;
+}
+#btn_close_session{
+    width: 100%;
+    padding: 10px;
+    color: blue;
+    background: rgb(233, 236, 18, 0.5);
+    outline: none;
+    border: transparent;
+    border-radius: 5px;
+    cursor: pointer;
+    box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px, rgba(0, 0, 0, 0.3) 0px 30px 60px -30px, rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset;
+    
+}
+#btn_close_session:hover{
+    background-color: rgb(30, 61, 236);
+    border-radius: 5px;
+    color: #fff;
+    scale: 1.2;
+    transition: 0.4s;
+}
+.close_session{
+    display: none;
+}
+.close_session-activo{
+    display: block;
+}
+.container-logo2{
+    /* display: none; */
+    display: flex;
+    justify-content: center;
+   display: none;
+    
+}
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------BARRA DE NAVEGACION----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .container .header .container-nav {
     width: 100%;
     background-color: rgb(233, 236, 18, 0.5);
@@ -85,16 +141,50 @@
 }
 
 .nav-link:hover {
-    background: rgb(30, 61, 236);
+    background-color: rgb(30, 61, 236);
     border-radius: 5px;
     color: #fff;
     scale: 1.2;
     transition: 0.4s;
 }
 
-/*--------------------------------------CONTENIDO-------*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------TOOLSTIPS----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 
-/*------PRODUCTOS-------*/
+.toolstip{
+    font-weight: normal;
+    position: relative;
+    padding: 0 30px;
+}
+.toolstip-box{
+    position: absolute;
+    background-color: rgb(233, 236, 18, 0.5);
+    border-radius: 5px;
+    line-height: 20px;
+    font-size: 14px;
+    z-index: 500;
+    right: -60px;
+    top: -45px;
+    width: 200px;
+    display: none;
+}
+.toolstip-box::after{
+    content: '';
+    display: block;
+    border-top: 7px solid rgb(233, 236, 18, 0.5);
+    border-left: 7px solid transparent;
+    border-right: 7px solid transparent;
+    position: absolute;
+    bottom: -7px;
+    left: calc(50% - 7px);
+}
+.toolstip:hover .toolstip-box{
+    display: inline-block;
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------PRODUCTOS----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .contenido{
     grid-area: contenido;
     margin: 25px 0;
@@ -108,8 +198,8 @@
 }
 .contenido .container-contenido{
     max-width: 1200px;
-    padding: 10px;
-    margin: auto;
+    padding: 15px;
+    margin: 15px;
     display: flex;
     justify-content: space-between;
     /* oculto lo que queda fuera del .contenedor */
@@ -135,16 +225,18 @@
 .contenido .container-contenido .container-productos {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-gap: 10px;
-    grid-row-gap: 10px;
+    
+    grid-row-gap: 15px;
+    
     /* width: 60%; */
     width: 100%;
-    margin: 5px 0;
+   
 }
 
 .contenido .container-contenido .container-productos .producto {
-    max-width: 200px;
-    margin: auto;
+    max-width: 220px;
+    height: 350px;
+    
     border: 1px solid #666;
     border-radius: 10px;
     padding: 20px;
@@ -158,6 +250,9 @@
 
 .contenido .container-contenido .container-productos .producto .img-producto {
     width: 100%;
+    width: 150px;
+    height: 150px;
+    
 }
 
 .contenido .container-contenido .container-productos .producto .titulo-producto {
@@ -165,8 +260,9 @@
     font-weight: bold;
     text-align: center;
     text-transform: uppercase;
-    /* font-size: 25px;
-    font-size-adjust: 0.5; */
+    font-size: 1.2vw;
+    
+    height: 30px;
 }
 
 .contenido .container-contenido .container-productos .producto .precio-producto {
@@ -189,7 +285,9 @@
 .contenido .container-contenido .container-productos .producto .btn-agregar-producto:hover{
     box-shadow: 0 0 10px rgb(75, 77, 104);
 }
-/*-----CARRITO DE COMPRA-----*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------CARRITO DE COMPRAS----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .container-carrito{
     border: 1px solid #666;
     width: 35%;
@@ -309,7 +407,9 @@
 .carrito-total .btn-pagar:hover{
     scale: 1.05;
 }
-/*-----PIE DE PAGINA-----*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------PIE DE PAGINA----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .footer {
     grid-area: footer;
     background-color: rgba(232, 236, 18, 0.5);
@@ -325,6 +425,7 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
     grid-gap: 10px;
+    margin-top: 10px;
     
 }
 
@@ -353,10 +454,20 @@
 .iconos{
     display: flex;
     width: 100%;
-    margin: 10px;
+    margin: 0 auto;
+    align-items: center;
+}
+.btn-whatsapp svg {
+    width: 30px;
+    height: 30px;
+    padding: 5px 2px;
+    fill: black;
+    
 }
 
-/* SECCION RESPONSIVE PRIMER CORTE */
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------CORTE 1----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @media screen and (max-width: 850px) {
     .contenido .container-contenido {
       display: block;
@@ -368,5 +479,50 @@
     .contenido .container-contenido .container-carrito {
       width: 100%;
     }
+    .weather-content{
+        display: none;
+    }
     
 }
+
+
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------CORTE 2----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 650px) {
+    .logo1{
+        display: none;
+    }
+}
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------CORTE 3----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 550px) {
+    .container-header{
+        display: none;  
+    }
+    .container-logo2{
+        display: flex;
+        align-items: center;        
+    }
+    .container{
+        grid-template: 10px auto 1fr / 60% 20% 20%;;
+        grid-template-areas:    "header     header      header"
+        "contenido  contenido   contenido"
+        "footer     footer      footer";
+    }
+    /* .container-logo2 img{
+        width: 100px;
+    } */
+}
+/*----------------*/
+/*////////////////////////////////////////////////////////////////////////////////////////////////////////
+/****----------------------------------------CORTE 4----------------------------------------****/
+/*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
+@media screen and (max-width: 375px) {
+    .logo{
+        width: 30vw;
+        height: auto;
+    }
+}
+/*----------------*/

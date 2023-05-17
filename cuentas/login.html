@@ -11,6 +11,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+        <script src="/js/api.js" async></script>
     <title>Decorumbas</title>
 </head>
 
@@ -19,7 +20,11 @@
         <!--ENCABEZADO-->
         <header class="header">
             <div class="container-header">
-                
+                <div class="weather-content">
+                    <div class="resultado">
+     
+                    </div>
+                </div>
                 <div class="container-logo">
                     <a href="/index.html" class="logo"><img src="/img/logo.png" alt="logo" width="100px"></a>
                     <a href="/index.html" class="logo"><img src="/img/logo2.png" alt="logo-nombre" width="300px"></a>
@@ -27,9 +32,13 @@
                 <div class="container-carrito-header centerContent centerItem">
                     
                     <ul class="nav-carrito">
-                        <li><a class="nav-link" href="/cuentas/registro.html"><i class='fa fa-user-plus'></i></a></li>
+                        <li><a href="/cuentas/registro.html"><i class='fa fa-user-plus toolstip'>
+                            <span class="toolstip-box">Registrar de Usuario</span>
+                        </i></a></li>
                         <li>|</li>
-                        <li><a class="nav-link" href="/cuentas/login.html"><i class='fa fa-user'></i></a></li>
+                        <li><a href="/cuentas/login.html"><i class='fa fa-user toolstip'>
+                            <span class="toolstip-box">Iniciar Sesión</span>
+                        </i></a></li>
                     </ul>
                 </div>
             </div>
@@ -37,7 +46,7 @@
 
                 <a class="nav-link" href="/index.html">Productos</a>
                 <a class="nav-link" href="/Sobre_Nostros.html">Sobre Nosotros</a>
-                <a class="nav-link" href="/contacto.html">Contacto</a>
+                
 
             </nav>
         </header>
@@ -45,23 +54,23 @@
 
         <div class="contenido center-contenido">
 
+            <div class="container-logo2">
+                <img src="/img/logo2.png" alt="logo" width="60%">
+            </div>
 
             <div class="container-form">
                 <!-- FORMULARIO DE LOGIN ---->
                 <P><span>Ingresa a tu cuenta</span></P>
-                <form action="" id="box_formulario">
-                    <label for="correo">EMAIL</label><br>
-                    <input type="email" name="correo" id="user_email" class="wd-input" required><br><br>
-                    <label for="contrasena">CONTRASEÑA</label><br>
-                    <input type="password" name="contrasena" id="user_password" class="wd-input" required><br><br>
-                </form>             
-                <div class="contenedor-recaptcha">
-
-                </div>
-                <div class="contenedor-btn">
-                    <button type="submit" id="wd-btn">Iniciar Sesión</button><br><br>
-                    <span><a href="/cuentas/registro.html"><b>Registrate Aqui</b></a></span>
-                </div>      
+                <form action="/index.html" id="box_formulario" class="box_formulario">
+                    <label for="user_email" class="formulario_etiqueta">Correo / Usuario</label><br>
+                    <input type="text" name="user_email" id="user_email" class="user_email formulario_input" required><br><br>
+                    <label for="user_password" class="formulario_etiqueta">Contraseña</label><br>
+                    <input type="password" name="user_password" id="user_password" class="user_email formulario_input" required><br><br>
+                    <div class= "formulario_btn_enviar">
+                        <button type="submit" id="btn-login" class="formulario_btn btn-login">Iniciar Sesión</button><br><br>
+                        <span><a href="/cuentas/registro.html" class="formulario_etiqueta"><b>Registrate Aqui</b></a></span>
+                    </div>
+                </form>  
 
             </div>
             
@@ -74,7 +83,7 @@
                     <ul>
                         <li class="footer-mg link-footer"><a class="nav-link" href="/index.html">Productos</a></li>
                         <li class="footer-mg link-footer"><a class="nav-link"href="/Sobre_Nostros.html">Sobre Nosotros</a></li>
-                        <li class="footer-mg link-footer"><a class="nav-link" href="/contacto.html">Contacto</a></li>
+                        
                     </ul>
                 </div>
                 <div class="container-footer-medios-de-pago footer-mg">
@@ -156,6 +165,7 @@
             </div>
         </footer>
     </div>
+    <script src="/js/login.js"></script>
 </body>
 
 <!--    <i class='fa fa-plus'></i>          Simbolo mas

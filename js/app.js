@@ -2,15 +2,19 @@
 var carritoVisible = false;
 var userLog = sessionStorage.getItem('userLogin'),
     userNam = sessionStorage.getItem('userName');
+var texto = document.getElementById('txt-user');
 
-
+    
 //Cargamos y comprobamos datos del usuario si ya inicio sesion
-if (userLog !== null){
-    const txt = document.getElementsByClassName('txt-user');
-    txt.innerText = userNam;
+if (userLog ==='true'){
+    texto.innerText = `Bienvenido ${userNam}`;
+    document.getElementById('nav-carrito').classList.add('nav-carrito-inactivo');
+    document.getElementById('close_session').classList.add('close_session-activo');
     
 }else{
-    alert('Vacio')
+    texto.innerText = ''
+    document.getElementById('nav-carrito').classList.remove('nav-carrito-inactivo');
+    document.getElementById('close_session').classList.remove('close_session-activo');
 }
 
 
@@ -54,6 +58,10 @@ function ready() {
     
     //Agregamos funcionalidad al botón comprar
     document.getElementsByClassName('btn-pagar')[0].addEventListener('click', pagarClicked)
+
+    //Agregamos funcionalidad al botón cerrar sesion
+    document.getElementById('btn_close_session').addEventListener('click', closeSession)
+
 }
 
 //Función para el boton click de agregar al carrito
@@ -215,4 +223,9 @@ function actualizarTotalCarrito() {
 
     document.getElementsByClassName('carrito-precio-total')[0].innerText = '$' + total.toLocaleString("es") + ",00";
 
+}
+//Funcion para cerrar session con boton 
+function closeSession(){
+    sessionStorage.setItem('userLogin', 'false')
+    
 }
