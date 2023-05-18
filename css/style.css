@@ -41,8 +41,7 @@
     
     text-align: center;
     border-radius: 9px;
-    /* display: grid;
-    grid-template-columns: repeat(3,1fr); */
+    
     
 }
 
@@ -413,6 +412,7 @@
 .footer {
     grid-area: footer;
     background-color: rgba(232, 236, 18, 0.5);
+   
 
 }
 .link-footer{
@@ -423,8 +423,8 @@
 }
 .footer .container-footer {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    grid-gap: 10px;
+    grid-template-columns: repeat(5, 1fr);
+    grid-gap: 5px;
     margin-top: 10px;
     
 }
