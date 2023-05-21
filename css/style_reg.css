@@ -2,10 +2,7 @@
 /****----------------------------------------FUENTE A UTILIZAR----------------------------------------****/
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 @import url('https://fonts.googleapis.com/css2?family=Calligraffitti&family=Montserrat:wght@200&family=Stylish&display=swap');
-*{
-    box-sizing: border-box;
-    
-}
+
 body{
     font-family: 'Montserrat';
 }
@@ -13,13 +10,15 @@ body{
 /****----------------------------------------ESTILOS A LOS ELEMENTOS DE LA PAGINA----------------------------------------****/
 /*///////////////////////////////////////////////////////////////////////////////////////////////////////*/
 .main{
+    
     max-width: 800px;
     width: 90%;
     margin: auto;
-    padding: 40px;
+    padding: 30px;
 }
 .main h2{
     text-align: center;
+    margin-bottom: 30px;
     color: rgb(30, 61, 236);
 }
 
@@ -39,6 +38,7 @@ body{
     position: relative;
 }
 .formulario_input{
+    box-sizing: border-box;
     width: 100%;
     background: rgb(233, 236, 18, 0.5);
     border:  3px solid transparent;
@@ -133,9 +133,8 @@ body{
     border: 3px solid #d41111;
 }
 .container-form{
-   
-    
-    width: 30%;
+    max-width: 300px;
+    width: 90%;
     margin: 0 auto;
 
 }

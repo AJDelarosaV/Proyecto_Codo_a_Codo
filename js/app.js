@@ -4,18 +4,19 @@ var userLog = sessionStorage.getItem('userLogin'),
     userNam = sessionStorage.getItem('userName');
 var texto = document.getElementById('txt-user');
 
+
     
 //Cargamos y comprobamos datos del usuario si ya inicio sesion
-if (userLog ==='true'){
-    texto.innerText = `Bienvenido ${userNam}`;
-    document.getElementById('nav-carrito').classList.add('nav-carrito-inactivo');
-    document.getElementById('close_session').classList.add('close_session-activo');
+ if (userLog ==='true'){
+     texto.innerText = `${userNam}`;
+     document.getElementById('nav-carrito').classList.add('nav-carrito-inactivo');
+     document.getElementById('close_session').classList.add('close_session-activo');
     
-}else{
-    texto.innerText = ''
-    document.getElementById('nav-carrito').classList.remove('nav-carrito-inactivo');
-    document.getElementById('close_session').classList.remove('close_session-activo');
-}
+ }else{
+     texto.innerText = ''
+     document.getElementById('nav-carrito').classList.remove('nav-carrito-inactivo');
+     document.getElementById('close_session').classList.remove('close_session-activo');
+ }
 
 
 //Espermos que todos los elementos de la página cargen para ejecutar el script
@@ -26,7 +27,17 @@ if (document.readyState == 'loading') {
 }
 
 function ready() {
-
+    
+    // if (userLog ==='true'){
+    //     texto.innerText = `${userNam}`;
+    //     document.getElementById('nav-carrito').classList.add('nav-carrito-inactivo');
+    //     document.getElementById('close_session').classList.add('close_session-activo');
+        
+    // }else{
+    //     texto.innerText = ''
+    //     document.getElementById('nav-carrito').classList.remove('nav-carrito-inactivo');
+    //     document.getElementById('close_session').classList.remove('close_session-activo');
+    // }
 
     //Agregamos funcionalidad al boton Agregar al carrito
     var botonesAgregarAlCarrito = document.getElementsByClassName('btn-agregar-producto');
@@ -63,7 +74,6 @@ function ready() {
     document.getElementById('btn_close_session').addEventListener('click', closeSession)
 
 }
-
 //Función para el boton click de agregar al carrito
 function agregarAlCarritoClicked(event) {
     var button = event.target;

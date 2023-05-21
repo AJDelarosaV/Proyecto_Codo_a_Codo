@@ -1,6 +1,4 @@
-
-
-const result = document.querySelector('.resultado');
+const result = document.querySelector('.container-weather');
 
 const nameCity = document.querySelector('#city');
 const nameCountry = document.querySelector('#country');
@@ -38,7 +36,7 @@ function showWeather(data){
     const content = document.createElement('div');
     content.innerHTML = `
         <h5>Clima en ${name}</h5>
-        <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon">
+        <img src="https://openweathermap.org/img/wn/${arr.icon}@2x.png" alt="icon" width = "30px">
         <h2>${degrees}°C</h2>
         <p>Max: ${max}°C</p>
         <p>Min: ${min}°C</p>
