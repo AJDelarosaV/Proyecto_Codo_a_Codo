@@ -195,7 +195,7 @@ body{
 }
 .nav-bar .nav-bar-link a{
     color: blue;
-    margin: 0 40px;   
+    margin: 0 10px;   
 }
 .nav-bar .nav-bar-link a:hover{
     color: #fff;
@@ -459,12 +459,15 @@ body{
     flex-direction: column;
     list-style: none;
     color: blue;
+    padding: 5px;
     
 }
 .list-mg li, a{
     text-decoration: none;
     color: blue;
     margin-bottom: 10px;
+    font-size:medium;
+    
 }
 .img-wd {
     max-width: 40px;

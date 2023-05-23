@@ -5,13 +5,15 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/img/logo.ico">
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/style_reg.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
         integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/style_reg.css">
+    <link rel="icon" href="/img/logo.ico">
     <script src="/js/api.js" async></script>
+    <script src="/js/app.js" async></script>
+
     <title>Decorumbas</title>
 </head>
 
@@ -62,32 +64,19 @@
                 <li><a class="nav-link" href="/index.html">Productos</a></li>
                 <li><a class="nav-link" href="/Sobre_Nosotros.html">Sobre Nosotros</a></li>
                 <li><a class="nav-link" href="/contacto.html">Contacto</a></li>
-                
             </ul>
         </nav>
         <!---------------------------------------------------------------------------------------------->
         <!--------------------------------------SECCION DE CONTENIDO------------------------------------>
         <!---------------------------------------------------------------------------------------------->
-        <div class="contenido">
-            <!-- FORMULARIO DE REGISTRO -->
+        <main class="contenido">
             <div class="main">
-                <h2>Formulario de Registro</h2>
-                <form action="/index.html" class="formulario" id="formulario">
-                    <!-- Campo: USUARIO -->
-                    <div class="grupo_formulario" id="grupo_usuario">
-                        <label for="usuario" class="formulario_etiqueta">Usuario</label>
-                        <div class="formulario_grupo_input">
-                            <input type="text" name="usuario" id="usuario" class="formulario_input"
-                                placeholder="Jhon123">
-                            <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
-                            <!-- <i class="fa-solid fa-check"></i> -->
-                        </div>
-                        <p class="formulario_input-error">El usuario tiene que ser de 6 a 15 digitos y solo puede
-                            contener letras, numeros y guión bajo.</p>
-                    </div>
-
-                    <!-- Campo: NOMBRE -->
-                    <div class="grupo_f ormulario" id="grupo_nombre">
+                <form action="https://formsubmit.co/delarosa.adalberto.jose@gmail.com" method="POST"
+                    id="formulario-contacto" class="formulario-contacto">
+                    <h2>Formulario de Contacto</h2>
+                    <!--------------------------------------CAMPO NOMBRE------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
+                    <div class="grupo_formulario" id="grupo_nombre">
                         <label for="nombre" class="formulario_etiqueta">Nombre</label>
                         <div class="formulario_grupo_input">
                             <input type="text" name="nombre" id="nombre" class="formulario_input"
@@ -97,34 +86,12 @@
                         </div>
                         <p class="formulario_input-error">El nombre solo puede contener letras.</p>
                     </div>
-
-                    <!-- Campo: CONTRASEÑA -->
-                    <div class="grupo_formulario" id="grupo_password">
-                        <label for="password" class="formulario_etiqueta">Contraseña</label>
-                        <div class="formulario_grupo_input">
-                            <input type="password" name="password" id="password" class="formulario_input">
-                            <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
-                            <!-- <i class="fa-solid fa-check"></i> -->
-                        </div>
-                        <p class="formulario_input-error">La contraseña tiene que ser de 6 a 12 digitos.</p>
-                    </div>
-
-                    <!-- Campo: CONTRASEÑA2 -->
-                    <div class="grupo_formulario" id="grupo_password2">
-                        <label for="password2" class="formulario_etiqueta">Repetir Contraseña</label>
-                        <div class="formulario_grupo_input">
-                            <input type="password" name="password2" id="password2" class="formulario_input">
-                            <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
-                            <!-- <i class="fa-solid fa-check"></i> -->
-                        </div>
-                        <p class="formulario_input-error">Ambas contraseñas deben ser iguales.</p>
-                    </div>
-
-                    <!-- Campo: CORREO -->
+                    <!--------------------------------------CAMPO EMAIL------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
                     <div class="grupo_formulario" id="grupo_correo">
                         <label for="correo" class="formulario_etiqueta">Correo Electrónico</label>
                         <div class="formulario_grupo_input">
-                            <input type="email" name="correo" id="correo" class="formulario_input"
+                            <input type="email" name="email" id="email" class="formulario_input"
                                 placeholder="corre@correo.com">
                             <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
                             <!-- <i class="fa-solid fa-check"></i> -->
@@ -132,8 +99,8 @@
                         <p class="formulario_input-error">El correo solo puede contener letras, numeros, puntos y guión
                             bajo.</p>
                     </div>
-
-                    <!-- Campo: TELEFONO -->
+                    <!--------------------------------------CAMPO TELEFONO------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
                     <div class="grupo_formulario" id="grupo_telefono">
                         <label for="telefono" class="formulario_etiqueta">Teléfono</label>
                         <div class="formulario_grupo_input">
@@ -145,30 +112,61 @@
                         <p class="formulario_input-error">El telefono solo puede contener numeros y un maximo de 13
                             digitos</p>
                     </div>
+                    <!--------------------------------------CAMPO ASUNTO------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
+                    <div class="grupo_formulario" id="grupo_asunto">
+                        <label for="asunto" class="formulario_etiqueta">ASUNTO</label>
+                        <div class="formulario_grupo_input">
+                            <input type="text" name="asunto" id="asunto" class="formulario_input" placeholder="Asunto">
+                            <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
+                            <!-- <i class="fa-solid fa-check"></i> -->
+                        </div>
+                        <p class="formulario_input-error">El asunto solo puede contener letras.</p>
+                    </div>
+                    <!--------------------------------------CAMPO COMENTARIOS------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
+                    <div class="grupo_formulario" id="grupo_comentario">
+                        <label for="comentario" class="formulario_etiqueta">COMENTARIOS</label>
+                        <div class="grupo_imputs">
+                            <textarea name="comentario" id="comentario" cols="50" rows="10"
+                                class="formulario_textarea"></textarea>
 
-                    <!-- Campo: TERMINOS Y CONDICIONES -->
+                            <i class="formulario_validacion-estado fa-sharp fa-solid fa-circle-xmark"></i>
+                            <!-- <i class="fa-solid fa-check"></i> -->
+                        </div>
+                        <p class="formulario_input-error">El nombre solo puede contener letras.</p>
+                    </div>
+                    <!--------------------------------------CAMPO TERMINOS------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
                     <div class="formulario_terminos" id="grupo_terminos">
                         <label class="formulario_etiqueta">
                             <input type="checkbox" name="terminos" id="terminos" class="formulario_checkbox">Acepto los
                             Terminos y Condiciones
                         </label>
                     </div>
-                    <!-- Campo: MENSAJE DE ERROR -->
+
+                    <!--------------------------------------CAMPO MENSAJE DE ERROR------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
                     <div class="formulario_mensaje" id="formulario_mensaje">
                         <p><i class="fa-regular fa-triangle-exclamation"></i><b>Error:</b> Por favor rellena todos los
                             campos del formulario</p>
                     </div>
-
-                    <!-- Campo: BOTON DE ENVIAR -->
-                    <div class="formulario_btn_enviar" id="formulario_btn_enviar">
+                    <!--------------------------------------CAMPO CONFIGURACION DEL SERVIDOR DE CORREO------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
+                    <input type="hidden" name="_CC" id="wCopy">
+                    <input type="hidden" name="_next" value="/index.html">
+                    <input type="hidden" name="_captcha" value="false">
+                    <!--------------------------------------CAMPO BOTON DE ENVIAR------------------------------------>
+                    <!---------------------------------------------------------------------------------------------->
+                    <div class="grupo_btn_enviar" id="grupo_btn_enviar">
                         <button type="submit" class="formulario_btn">Enviar</button>
-                        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">El formiulario fue enviado
+                        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito" onclick="copyCC()">El formiulario fue enviado
                             exitosamente.</p>
                     </div>
                 </form>
             </div>
-        </div>
-        
+        </main>
+
         <!---------------------------------------------------------------------------------------------->
         <!--------------------------------------SECCION FOOTER / PIE DE PAGINA-------------------------->
         <!---------------------------------------------------------------------------------------------->
@@ -181,7 +179,7 @@
                             <a href="/index.html">Productos</a>
                         </li>
                         <li>
-                            <a href="/Sobre_Nosotros.html">Sobre Nosotros</a>
+                            <a href="/Sobre_Nostros.html">Sobre Nosotros</a>
                         </li>
                         <li>
                             <a href="/contacto.html">Contacto</a>
@@ -202,33 +200,36 @@
                 <div class="footer-medios-contenedor1">
                     <h4>Medios de Pago</h4>
                     <div class="container-img-pagos">
-                        <img src="/img/medios de pago/visa@2x.png" alt="Visa" class="img-wd">
-                        <img src="/img/medios de pago/mastercard@2x.png" alt="MasterCard" class="img-wd">
-                        <img src="/img/medios de pago/amex@2x.png" alt="AmericanExpress" class="img-wd">
-                        <img src="/img/medios de pago/mercadopago@2x.png" alt="MercadoPago" class="img-wd">
-                        <img src="/img/medios de pago/tarjeta-naranja@2x.png" alt="Naranja" class="img-wd">
-                        <img src="/img/medios de pago/argencard@2x.png" alt="ArgenCard" class="img-wd">
-                        <img src="/img/medios de pago/banelco@2x.png" alt="Banelco" class="img-wd">
-                        <img src="/img/medios de pago/cabal@2x.png" alt="Cabal" class="img-wd">
-                        <img src="/img/medios de pago/cencosud@2x.png" alt="Cencosud" class="img-wd">
-                        <img src="/img/medios de pago/diners@2x.png" alt="DinersClub" class="img-wd">
-                        <img src="/img/medios de pago/pagofacil@2x.png" alt="PagoFácil" class="img-wd">
-                        <img src="/img/medios de pago/rapipago@2x.png" alt="RapiPago" class="img-wd">
-                        <img src="/img/medios de pago/tarjeta-shopping@2x.png" alt="ShoppingCard" class="img-wd">
+                        <img src="img/medios de pago/visa@2x.png" alt="Visa" class="img-wd">
+                        <img src="img/medios de pago/mastercard@2x.png" alt="MasterCard" class="img-wd">
+                        <img src="img/medios de pago/amex@2x.png" alt="AmericanExpress" class="img-wd">
+                        <img src="img/medios de pago/mercadopago@2x.png" alt="MercadoPago" class="img-wd">
+                        <img src="img/medios de pago/tarjeta-naranja@2x.png" alt="Naranja" class="img-wd">
+                        <img src="img/medios de pago/argencard@2x.png" alt="ArgenCard" class="img-wd">
+                        <img src="img/medios de pago/banelco@2x.png" alt="Banelco" class="img-wd">
+                        <img src="img/medios de pago/cabal@2x.png" alt="Cabal" class="img-wd">
+                        <img src="img/medios de pago/cencosud@2x.png" alt="Cencosud" class="img-wd">
+                        <img src="img/medios de pago/diners@2x.png" alt="DinersClub" class="img-wd">
+                        <img src="img/medios de pago/pagofacil@2x.png" alt="PagoFácil" class="img-wd">
+                        <img src="img/medios de pago/rapipago@2x.png" alt="RapiPago" class="img-wd">
+                        <img src="img/medios de pago/tarjeta-shopping@2x.png" alt="ShoppingCard" class="img-wd">
                     </div>
                 </div>
                 <div class="footer-medios-contenedor2">
                     <h4>Formas de Envíos</h4>
                     <div class="container-img-envios">
-                        <img src="/img/medios de envios/correoargentino.png" alt="CorreoArgentino" class="img-wd">
-                        <img src="/img/medios de envios/andreani.png" alt="Andreani" class="img-wd">
-                        <img src="/img/medios de envios/oca.png" alt="OCA" class="img-wd">
+                        <img src="img/medios de envios/correoargentino.png" alt="CorreoArgentino" class="img-wd">
+                        <img src="img/medios de envios/andreani.png" alt="Andreani" class="img-wd">
+                        <img src="img/medios de envios/oca.png" alt="OCA" class="img-wd">
                     </div>
                 </div>
             </div>
             <div class="footer-direccion">
                 <h4>Dirección</h4>
-                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6579.277235052683!2d-58.915957420343375!3d-34.46132035076408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9cd1e5b542c7%3A0x15c9f39551b5c4fc!2sPlaza%2012%20de%20octubre!5e0!3m2!1ses-419!2sar!4v1684536554449!5m2!1ses-419!2sar" width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade" class="iframe-map"></iframe>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d6579.277235052683!2d-58.915957420343375!3d-34.46132035076408!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bc9cd1e5b542c7%3A0x15c9f39551b5c4fc!2sPlaza%2012%20de%20octubre!5e0!3m2!1ses-419!2sar!4v1684536554449!5m2!1ses-419!2sar"
+                    width="450" height="200" style="border:0;" allowfullscreen="" loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"></iframe>
             </div>
         </footer>
         <!---------------------------------------------------------------------------------------------->
@@ -237,8 +238,18 @@
         <div class="copy-right">
             <span><i class="fa fa-copyright" aria-hidden="true"></i>DecoRumbas 2023 - Codo a Codo</span>
         </div>
+
     </div>
-    <script src="/js/validacion.js"></script>
+    <script src="/js/validacion_contacto.js"></script>
+    <script>
+        function copyCC() {
+            const withCopy = document.getElementById('wCopy');
+            var wEmail = document.getElementById('email').value;
+            withCopy.value = wEmail;
+            console.log(withCopy.value)
+
+        }
+    </script>
 </body>
 
 </html>
