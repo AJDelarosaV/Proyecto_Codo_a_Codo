@@ -154,13 +154,13 @@
                     <!--------------------------------------CAMPO CONFIGURACION DEL SERVIDOR DE CORREO------------------------------------>
                     <!---------------------------------------------------------------------------------------------->
                     <input type="hidden" name="_CC" id="wCopy">
-                    <input type="hidden" name="_next" value="/index.html">
+                    <input type="hidden" name="_next" value="index.html">
                     <input type="hidden" name="_captcha" value="false">
                     <!--------------------------------------CAMPO BOTON DE ENVIAR------------------------------------>
                     <!---------------------------------------------------------------------------------------------->
                     <div class="grupo_btn_enviar" id="grupo_btn_enviar">
                         <button type="submit" class="formulario_btn">Enviar</button>
-                        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito" onclick="copyCC()">El formiulario fue enviado
+                        <p class="formulario_mensaje_exito" id="formulario_mensaje_exito">El formiulario fue enviado
                             exitosamente.</p>
                     </div>
                 </form>
@@ -241,15 +241,6 @@
 
     </div>
     <script src="js/validacion_contacto.js"></script>
-    <script>
-        function copyCC() {
-            const withCopy = document.getElementById('wCopy');
-            var wEmail = document.getElementById('email').value;
-            withCopy.value = wEmail;
-            console.log(withCopy.value)
-
-        }
-    </script>
 </body>
 
 </html>

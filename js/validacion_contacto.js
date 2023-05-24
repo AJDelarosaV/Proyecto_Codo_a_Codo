@@ -62,6 +62,11 @@ formContacto.addEventListener('submit', (e) => {
 
 
     const terminos = document.getElementById('terminos');
+    const withCopy = document.getElementById('wCopy');
+    var wEmail = document.getElementById('email').value;
+    withCopy.value = wEmail;
+    console.log(withCopy.value)
+
 
     if (campos.nombre && campos.asunto &&  campos.correo && campos.telefono && terminos.checked) {
 
