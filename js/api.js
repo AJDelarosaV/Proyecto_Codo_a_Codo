@@ -1,12 +1,13 @@
 const result = document.querySelector('.container-weather');
 
 const nameCity = document.querySelector('#city');
-const nameCountry = document.querySelector('#country');
-callAPI('Buenos Aires', 'Argentina');
 
-function callAPI(city, country){
+callAPI('Pilar', 'Argentina');
+
+function callAPI(city){
     const apiId = '6ad1109e8672eea50916beabd5faf7aa';
-    const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiId}`;
+    const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiId}`;
+    
 
     fetch(url)
         .then(data => {
