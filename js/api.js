@@ -5,7 +5,7 @@ const nameCountry = document.querySelector('#country');
 callAPI('Buenos Aires', 'Argentina');
 
 function callAPI(city, country){
-    const apiId = '41d1d7f5c2475b3a16167b30bc4f265c';
+    const apiId = '6ad1109e8672eea50916beabd5faf7aa';
     const url = `http://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${apiId}`;
 
     fetch(url)
